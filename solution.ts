@@ -65,4 +65,47 @@ function filterActiveUsers(users: Users[]): Users[] {
   return users.filter((users) => users.isActive === true);
 }
 
+// problem 06: Create an interface for a book with title, author, publishedYear and isAvailable properties then create a function to print book details
 
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+function printBookDetails(book: Book): void {
+  const availability = book.isAvailable ? "Yes" : "No";
+
+  console.log(
+    `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`,
+  );
+}
+
+const myBook: Book = {
+  title: "The Great Gatsby",
+  author: "F. Scott Fitzgerald",
+  publishedYear: 1925,
+  isAvailable: true,
+};
+
+printBookDetails(myBook);
+
+//problem 07:
+
+function getUniqueValues(
+  arr1: (number | string)[],
+  arr2: (number | string)[],
+): (number | string)[] {
+  const combined = []; // empty array
+
+  // push all values from arr1
+  for (let i = 0; i < arr1.length; i++) {
+    combined.push(arr1[i]);
+  }
+
+  // push all values from arr2
+  for (let i = 0; i < arr2.length; i++) {
+    combined.push(arr2[i]);
+  }
+}
