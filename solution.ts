@@ -41,3 +41,28 @@ class Person {
   }
 }
 
+// Problem 04: Create an interface for an item with title and rating properties then create a function to filter items based on rating greater than or equal to 4
+
+type Item = {
+  title: string;
+  rating: number;
+};
+
+function filterByRating(items: Item[]): Item[] {
+  return items.filter((item) => item.rating >= 4);
+}
+
+// Problem 05: Create a type for users with id, name, email and isActive properties then create a function to filter active users
+
+type Users = {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+
+function filterActiveUsers(users: Users[]): Users[] {
+  return users.filter((users) => users.isActive === true);
+}
+
+
