@@ -13,12 +13,7 @@ function formatValue(
     const output = !value;
     return output;
   }
-  return "";
 }
-
-console.log(formatValue("hello"));
-console.log(formatValue(5));
-console.log(formatValue(true));
 
 // Problem 02: Handle unknown types of input then check is it string or array and check its length based on type then return a output
 
@@ -28,14 +23,21 @@ function getLength(value: string | any[]): number {
   } else if (Array.isArray(value)) {
     return value.length;
   }
-  return 0;
 }
 
-const users = [
-  { id: 1, name: "Hasib", age: 18 },
-  { id: 2, name: "Rahim", age: 22 },
-  { id: 3, name: "Karim", age: 25 },
-];
+// Problem 03: create a person class and assign name and age then create a method to get the details of the person
 
-console.log(getLength("hello world"));
-console.log(getLength(users));
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails(): string {
+    return `Name: ${this.name}, Age: ${this.age}`;
+  }
+}
+
