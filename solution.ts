@@ -13,6 +13,7 @@ function formatValue(
     const output = !value;
     return output;
   }
+  return "";
 }
 
 console.log(formatValue("hello"));
@@ -27,6 +28,7 @@ function getLength(value: string | any[]): number {
   } else if (Array.isArray(value)) {
     return value.length;
   }
+  return 0;
 }
 
 const users = [
