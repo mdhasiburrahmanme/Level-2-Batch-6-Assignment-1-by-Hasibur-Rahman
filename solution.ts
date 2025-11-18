@@ -61,8 +61,8 @@ type Users = {
   isActive: boolean;
 };
 
-function filterActiveUsers(users: Users[]): Users[] {
-  return users.filter((users) => users.isActive === true);
+function filterActiveUsers(user: Users[]): Users[] {
+  return user.filter((users) => users.isActive === true);
 }
 
 // problem 06: Create an interface for a book with title, author, publishedYear and isAvailable properties then create a function to print book details
@@ -82,30 +82,57 @@ function printBookDetails(book: Book): void {
   );
 }
 
-const myBook: Book = {
-  title: "The Great Gatsby",
-  author: "F. Scott Fitzgerald",
-  publishedYear: 1925,
-  isAvailable: true,
-};
-
-printBookDetails(myBook);
-
-//problem 07:
+//problem 07: Create a function that takes two arrays of numbers or strings and returns a new array containing only the unique values from both arrays
 
 function getUniqueValues(
   arr1: (number | string)[],
   arr2: (number | string)[],
 ): (number | string)[] {
-  const combined = []; // empty array
+  const combined = [];
 
-  // push all values from arr1
   for (let i = 0; i < arr1.length; i++) {
     combined.push(arr1[i]);
   }
 
-  // push all values from arr2
   for (let i = 0; i < arr2.length; i++) {
     combined.push(arr2[i]);
   }
+
+  const unique: (number | string)[] = [];
+
+  for (let i = 0; i < combined.length; i++) {
+    let exists = false;
+
+    for (let j = 0; j < unique.length; j++) {
+      if (combined[i] === unique[j]) {
+        exists = true;
+      }
+    }
+
+    if (!exists) {
+      unique.push(combined[i]);
+    }
+  }
+
+  return unique;
+}
+
+// Problem 08: Create a type for a product with name, price, quantity and optional discount properties then create a function to calculate the total price of products considering the discount if available
+
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+function calculateTotalPrice(products: Product[]): number {
+  const prices = products.map((product) => {
+    const total = product.price * product.quantity;
+    const discount = product.discount ?? 0;
+    return total - (total * discount) / 100;
+  });
+
+  const totalPrice = prices.reduce((acc, curr) => acc + curr, 0);
+  return totalPrice;
 }
