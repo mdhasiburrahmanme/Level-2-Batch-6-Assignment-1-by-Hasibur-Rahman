@@ -63,11 +63,11 @@ Answer: Difference between `any`, `unknown` and `never` types in TypeScript expl
 
 Answer: It's Hard to Understand for me thats why I cant Answer this Question Now.
 
-## **Q/N: 05: Provide an example of using union and intersection types in TypeScript.**
+## **Q/N: 05: Provide an example of using `union` and `intersection` types in `TypeScript`.**
 
 Answer: Before giving example I would like to clear the concepts before what I think about this and how do I understand this things.
 
--Union: union মূলত কোন parameters এ এমন শর্ত যুক্ত করে যে input পাওয়া data parameters type এর যেকোন একটা শর্ত পূরন করে কি না। যদি করে তাহলে পরবর্তী কাজ চলবে। অন্যথায় error show করবে।
+-`Union`: `union` মূলত কোন `parameters` এ এমন শর্ত যুক্ত করে যে `input` পাওয়া data parameters type এর যেকোন একটা শর্ত পূরন করে কি না। যদি করে তাহলে পরবর্তী কাজ চলবে। অন্যথায় `error show` করবে।
 
 **Example**
 
@@ -79,7 +79,7 @@ value = 42;
 //Both are valid here.
 ```
 
--Intersection: intersection মূলত কোন parameters এ এমন শর্ত যুক্ত করে যে input পাওয়া data parameters type এর সকল শর্ত পূরন করে কি না। যদি করে তাহলে পরবর্তী কাজ চলবে। অন্যথায় error show করবে।
+-`Intersection`: `intersection` মূলত কোন parameters এ এমন শর্ত যুক্ত করে যে `input` পাওয়া data parameters type এর সকল শর্ত পূরন করে কি না। যদি করে তাহলে পরবর্তী কাজ চলবে। অন্যথায় error show করবে।
 
 ```TypeScript
 TypeScript
