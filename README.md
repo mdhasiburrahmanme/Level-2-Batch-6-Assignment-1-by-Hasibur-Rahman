@@ -45,3 +45,13 @@ getValue(user, "email");   // valid
 getValue(user, "age");     // valid
 getValue(user, "address"); // error — কারণ keyof এ নেই
 ```
+
+## **Q/N: 03: Explain the difference between any, unknown, and never types in TypeScript.**
+
+Answer: Difference between `any`, `unknown` and `never` types in TypeScript explained below.
+
+--`Any` : TypeScript এ any type বলতে  বুঝায় যে User এর input Type checking ছাড়াই গ্রহন করবে।
+
+--`Unknown` : TypeScript e any এবং unknown প্রায় একই কাজ করে, তবুও ছোট কিন্তু গুরুত্বপূর্ন একটা পার্থক্য আছে যেমনঃ ‍any type checking ছাড়াই data input নিতে পারে কিন্তু unknown এর ক্ষেত্রে আগে অবশ্যই type check করতে হয় বা type define করতে হবে।
+
+--`Never` : never এমন একটা টাইপ যে কোন value return করতে পারে না। সাধারণত error throw করে।
